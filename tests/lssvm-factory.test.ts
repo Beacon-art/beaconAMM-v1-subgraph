@@ -8,9 +8,9 @@ import {
 } from "matchstick-as/assembly/index"
 import { Address, BigInt } from "@graphprotocol/graph-ts"
 import { ExampleEntity } from "../generated/schema"
-import { BondingCurveStatusUpdate } from "../generated/LSSVMFactory/LSSVMFactory"
-import { handleBondingCurveStatusUpdate } from "../src/lssvm-factory"
-import { createBondingCurveStatusUpdateEvent } from "./lssvm-factory-utils"
+import { BondingCurveStatusUpdate } from "../generated/BeaconAmmV1PairFactory/BeaconAmmV1PairFactory"
+import { handleBondingCurveStatusUpdate } from "../src/BeaconAmmV1-factory"
+import { createBondingCurveStatusUpdateEvent } from "./BeaconAmmV1-factory-utils"
 
 // Tests structure (matchstick-as >=0.5.0)
 // https://thegraph.com/docs/en/developer/matchstick/#tests-structure-0-5-0

@@ -2,7 +2,7 @@ type Pair @entity {
   id: ID!
   owner: PairOwner!
   collection: Collection!
-  "poolType of the LSSVMPair (TOKEN, NFT, or TRADE)"
+  "poolType of the BeaconAmmV1Pair (TOKEN, NFT, or TRADE)"
   type: BigInt!
   assetRecipient: String!
   bondingCurve: String!

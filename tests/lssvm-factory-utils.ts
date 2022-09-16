@@ -10,7 +10,7 @@ import {
   ProtocolFeeRecipientUpdate,
   RouterStatusUpdate,
   TokenDeposit
-} from "../generated/LSSVMFactory/LSSVMFactory"
+} from "../generated/BeaconAmmV1PairFactory/BeaconAmmV1PairFactory"
 
 export function createBondingCurveStatusUpdateEvent(
   bondingCurve: Address,

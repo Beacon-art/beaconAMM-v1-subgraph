@@ -3,12 +3,12 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: LSSVMFactory
-    network: mainnet
+    name: BeaconAmmV1PairFactory
+    network: goerli
     source:
-      address: "0xb16c1342E617A5B6E4b631EB114483FDB289c0A4"
-      abi: LSSVMFactory
-      startBlock: 14645816
+      address: "0xA0B9915CE86a0082F5ee11478218B3fe71CdceCe"
+      abi: BeaconAmmV1PairFactory
+      startBlock: 7590815
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -18,20 +18,20 @@ dataSources:
         - PairOwner
         - Collection
       abis:
-        - name: LSSVMFactory
-          file: ./abis/LSSVMFactory.json
-        - name: LSSVMPair
-          file: ./abis/LSSVMPair.json
+        - name: BeaconAmmV1PairFactory
+          file: ./abis/BeaconAmmV1PairFactory.json
+        - name: BeaconAmmV1Pair
+          file: ./abis/BeaconAmmV1Pair.json
       callHandlers:
         - function: createPairETH(address,address,address,uint8,uint128,uint96,uint128,uint256[])
           handler: handleNewPair
       file: ./src/factory.ts
 templates:
   - kind: ethereum
-    name: LSSVMPair
-    network: mainnet
+    name: BeaconAmmV1Pair
+    network: goerli
     source:
-      abi: LSSVMPair
+      abi: BeaconAmmV1Pair
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -41,8 +41,8 @@ templates:
         - PairOwner
         - Collection
       abis:
-        - name: LSSVMPair
-          file: ./abis/LSSVMPair.json
+        - name: BeaconAmmV1Pair
+          file: ./abis/BeaconAmmV1Pair.json
         - name: Multicall3
           file: ./abis/Multicall3.json
       eventHandlers:
@@ -67,7 +67,7 @@ templates:
       file: ./src/pair.ts
   - kind: ethereum
     name: ERC721
-    network: mainnet
+    network: goerli
     source:
       abi: ERC721
     mapping:

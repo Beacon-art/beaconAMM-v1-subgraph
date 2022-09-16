@@ -1,9 +1,9 @@
 import {
   CreatePairETHCall
-} from "../generated/LSSVMFactory/LSSVMFactory"
+} from "../generated/BeaconAmmV1PairFactory/BeaconAmmV1PairFactory"
 import { Pair, Collection, PairOwner } from "../generated/schema"
 import { BigInt } from "@graphprotocol/graph-ts"
-import { LSSVMPair as PairTemplate, ERC721 as ERC721Template } from "../generated/templates"
+import { BeaconAmmV1Pair as PairTemplate, ERC721 as ERC721Template } from "../generated/templates"
 
 export function handleNewPair(call: CreatePairETHCall): void {
   let pair = new Pair(call.outputs.pair.toHex())

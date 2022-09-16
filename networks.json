@@ -1,7 +1,7 @@
 {
-  "mainnet": {
-    "LSSVMFactory": {
-      "address": "0xb16c1342E617A5B6E4b631EB114483FDB289c0A4"
+  "goerli": {
+    "BeaconAmmV1PairFactory": {
+      "address": "0xA0B9915CE86a0082F5ee11478218B3fe71CdceCe"
     }
   }
 }

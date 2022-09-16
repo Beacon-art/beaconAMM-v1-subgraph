@@ -1,0 +1,621 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "internalType": "contract BeaconAmmV1PairEnumerableETH",
+        "name": "_enumerableETHTemplate",
+        "type": "address"
+      },
+      {
+        "internalType": "contract BeaconAmmV1PairMissingEnumerableETH",
+        "name": "_missingEnumerableETHTemplate",
+        "type": "address"
+      },
+      {
+        "internalType": "contract BeaconAmmV1PairEnumerableERC20",
+        "name": "_enumerableERC20Template",
+        "type": "address"
+      },
+      {
+        "internalType": "contract BeaconAmmV1PairMissingEnumerableERC20",
+        "name": "_missingEnumerableERC20Template",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_protocolFeeRecipient",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_protocolFeeMultiplier",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "bondingCurveAllowed",
+    "inputs": [
+      {
+        "internalType": "contract ICurve",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "callAllowed",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "changeProtocolFeeMultiplier",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_protocolFeeMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "changeProtocolFeeRecipient",
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "_protocolFeeRecipient",
+        "type": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createPairERC20",
+    "inputs": [
+      {
+        "internalType": "struct BeaconAmmV1PairFactory.CreateERC20PairParams",
+        "name": "params",
+        "type": "tuple",
+        "components": [
+          {
+            "type": "address"
+          },
+          {
+            "type": "address"
+          },
+          {
+            "type": "address"
+          },
+          {
+            "type": "address"
+          },
+          {
+            "type": "uint8"
+          },
+          {
+            "type": "uint128"
+          },
+          {
+            "type": "uint96"
+          },
+          {
+            "type": "uint128"
+          },
+          {
+            "type": "uint256[]"
+          },
+          {
+            "type": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "contract BeaconAmmV1PairERC20",
+        "name": "pair",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createPairETH",
+    "inputs": [
+      {
+        "internalType": "contract IERC721",
+        "name": "_nft",
+        "type": "address"
+      },
+      {
+        "internalType": "contract ICurve",
+        "name": "_bondingCurve",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_assetRecipient",
+        "type": "address"
+      },
+      {
+        "internalType": "enum BeaconAmmV1Pair.PoolType",
+        "name": "_poolType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint128",
+        "name": "_delta",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint96",
+        "name": "_fee",
+        "type": "uint96"
+      },
+      {
+        "internalType": "uint128",
+        "name": "_spotPrice",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "_initialNFTIDs",
+        "type": "uint256[]"
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "contract BeaconAmmV1PairETH",
+        "name": "pair",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "depositERC20",
+    "inputs": [
+      {
+        "internalType": "contract ERC20",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "depositNFTs",
+    "inputs": [
+      {
+        "internalType": "contract IERC721",
+        "name": "_nft",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "ids",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "enumerableERC20Template",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "contract BeaconAmmV1PairEnumerableERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "enumerableETHTemplate",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "contract BeaconAmmV1PairEnumerableETH",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isPair",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "potentialPair",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IBeaconAmmV1PairFactory.PairVariant",
+        "name": "variant",
+        "type": "uint8"
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "missingEnumerableERC20Template",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "contract BeaconAmmV1PairMissingEnumerableERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "missingEnumerableETHTemplate",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "contract BeaconAmmV1PairMissingEnumerableETH",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "protocolFeeMultiplier",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "protocolFeeRecipient",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "address payable",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "renounceOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "routerStatus",
+    "inputs": [
+      {
+        "internalType": "contract BeaconAmmV1Router",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "allowed",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "wasEverAllowed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setBondingCurveAllowed",
+    "inputs": [
+      {
+        "internalType": "contract ICurve",
+        "name": "bondingCurve",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isAllowed",
+        "type": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setCallAllowed",
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isAllowed",
+        "type": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setRouterAllowed",
+    "inputs": [
+      {
+        "internalType": "contract BeaconAmmV1Router",
+        "name": "_router",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isAllowed",
+        "type": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "transferOwnership",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "withdrawERC20ProtocolFees",
+    "inputs": [
+      {
+        "internalType": "contract ERC20",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "withdrawETHProtocolFees",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "BondingCurveStatusUpdate",
+    "inputs": [
+      {
+        "name": "bondingCurve",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "isAllowed",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "CallTargetStatusUpdate",
+    "inputs": [
+      {
+        "name": "target",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "isAllowed",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "NFTDeposit",
+    "inputs": [
+      {
+        "name": "poolAddress",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "NewPair",
+    "inputs": [
+      {
+        "name": "poolAddress",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      {
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ProtocolFeeMultiplierUpdate",
+    "inputs": [
+      {
+        "name": "newMultiplier",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ProtocolFeeRecipientUpdate",
+    "inputs": [
+      {
+        "name": "recipientAddress",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RouterStatusUpdate",
+    "inputs": [
+      {
+        "name": "router",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "isAllowed",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TokenDeposit",
+    "inputs": [
+      {
+        "name": "poolAddress",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "receive"
+  }
+]

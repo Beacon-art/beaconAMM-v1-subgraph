@@ -1,6 +1,6 @@
-import { AssetRecipientChange, DeltaUpdate, FeeUpdate, OwnershipTransferred, SpotPriceUpdate, SwapNFTInPair, SwapNFTOutPair, TokenDeposit, TokenWithdrawal } from "../generated/templates/LSSVMPair/LSSVMPair"
+import { AssetRecipientChange, DeltaUpdate, FeeUpdate, OwnershipTransferred, SpotPriceUpdate, SwapNFTInPair, SwapNFTOutPair, TokenDeposit, TokenWithdrawal } from "../generated/templates/BeaconAmmV1Pair/BeaconAmmV1Pair"
 import { Collection, Pair, PairOwner } from "../generated/schema"
-import { Multicall3 } from "../generated/templates/LSSVMPair/Multicall3"
+import { Multicall3 } from "../generated/templates/BeaconAmmV1Pair/Multicall3"
 import { Address, BigInt, ethereum } from "@graphprotocol/graph-ts"
 
 export function handleOwnershipTransferred(event: OwnershipTransferred): void {
