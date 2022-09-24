@@ -56,10 +56,12 @@ export function handleSwapNFTInPair(event: SwapNFTInPair): void {
 
     let pair = Pair.load(event.address.toHex())
     pair!.ethVolume = pair!.ethVolume.plus(ethChange.abs())
+    pair!.tradeFeeEarnings = pair!.tradeFeeEarnings.plus(event.params.tradeFee)
     pair!.save()
 
     let collection = Collection.load(pair!.collection)
     collection!.ethVolume = collection!.ethVolume.plus(ethChange.abs())
+    collection!.royaltyFeeEarnings = collection!.royaltyFeeEarnings.plus(event.params.royaltyFee)
     collection!.save()
 }
 
@@ -70,10 +72,12 @@ export function handleSwapNFTOutPair(event: SwapNFTOutPair): void {
 
     let pair = Pair.load(event.address.toHex())
     pair!.ethVolume = pair!.ethVolume.plus(ethChange.abs())
+    pair!.tradeFeeEarnings = pair!.tradeFeeEarnings.plus(event.params.tradeFee)
     pair!.save()
 
     let collection = Collection.load(pair!.collection)
     collection!.ethVolume = collection!.ethVolume.plus(ethChange.abs())
+    collection!.royaltyFeeEarnings = collection!.royaltyFeeEarnings.plus(event.params.royaltyFee)
     collection!.save()
 }
 

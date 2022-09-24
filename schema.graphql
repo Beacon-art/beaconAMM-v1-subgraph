@@ -14,6 +14,7 @@ type Pair @entity {
   numNfts: BigInt!
   ethBalance: BigInt!
   ethVolume: BigInt!
+  tradeFeeEarnings: BigInt!
 }
 
 type PairOwner @entity {
@@ -26,4 +27,5 @@ type Collection @entity {
   pairs: [Pair!]! @derivedFrom(field: "collection")
   ethOfferTVL: BigInt!
   ethVolume: BigInt!
+  royaltyFeeEarnings: BigInt!
 }

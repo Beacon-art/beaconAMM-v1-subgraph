@@ -27,24 +27,6 @@
   },
   {
     "type": "function",
-    "name": "call",
-    "inputs": [
-      {
-        "internalType": "address payable",
-        "name": "target",
-        "type": "address"
-      },
-      {
-        "internalType": "bytes",
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
     "name": "changeAssetRecipient",
     "inputs": [
       {
@@ -195,6 +177,16 @@
         "internalType": "uint256",
         "name": "protocolFee",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tradeFee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "royaltyFee",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view"
@@ -233,6 +225,16 @@
       {
         "internalType": "uint256",
         "name": "protocolFee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tradeFee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "royaltyFee",
         "type": "uint256"
       }
     ],
@@ -709,13 +711,55 @@
   {
     "type": "event",
     "name": "SwapNFTInPair",
-    "inputs": [],
+    "inputs": [
+      {
+        "name": "tokenSwapOutAmount",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "protocolFee",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "tradeFee",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "royaltyFee",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
     "anonymous": false
   },
   {
     "type": "event",
     "name": "SwapNFTOutPair",
-    "inputs": [],
+    "inputs": [
+      {
+        "name": "tokenSwapInAmount",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "protocolFee",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "tradeFee",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "royaltyFee",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
     "anonymous": false
   },
   {

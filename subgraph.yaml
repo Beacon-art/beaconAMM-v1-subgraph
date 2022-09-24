@@ -6,9 +6,9 @@ dataSources:
     name: BeaconAmmV1PairFactory
     network: goerli
     source:
-      address: "0xA0B9915CE86a0082F5ee11478218B3fe71CdceCe"
+      address: "0x5e703991f17Cb8196E7aB682446e7D8a911Bf869"
       abi: BeaconAmmV1PairFactory
-      startBlock: 7590815
+      startBlock: 7649864
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -60,9 +60,9 @@ templates:
           handler: handleTokenDeposit
         - event: TokenWithdrawal(uint256)
           handler: handleTokenWithdrawal
-        - event: SwapNFTInPair()
+        - event: SwapNFTInPair(uint256,uint256,uint256,uint256)
           handler: handleSwapNFTInPair
-        - event: SwapNFTOutPair()
+        - event: SwapNFTOutPair(uint256,uint256,uint256,uint256)
           handler: handleSwapNFTOutPair
       file: ./src/pair.ts
   - kind: ethereum
