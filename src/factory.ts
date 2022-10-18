@@ -21,6 +21,7 @@ export function handleNewPair(call: CreatePairETHCall): void {
     collection = new Collection(collectionAddress.toHex())
     collection.ethOfferTVL = BigInt.zero()
     collection.ethVolume = BigInt.zero()
+    collection.royaltyFeeEarnings = BigInt.zero()
   }
 
   pair.owner = pairOwner.id
@@ -37,6 +38,7 @@ export function handleNewPair(call: CreatePairETHCall): void {
   pair.numNfts = BigInt.fromI32(call.inputs._initialNFTIDs.length)
   pair.ethBalance = BigInt.zero()
   pair.ethVolume = BigInt.zero()
+  pair.tradeFeeEarnings = BigInt.zero()
 
   pair.save()
   pairOwner.save()
